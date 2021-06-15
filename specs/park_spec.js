@@ -23,22 +23,28 @@ describe('Park', function() {
 
   it('should have a ticket price', function(){
     const actual = park.ticketPrice;
-    assert.strictEqual(actual, 15)
+    assert.strictEqual(actual, 15);
   });
 
   it('should have a collection of dinosaurs', function(){
     const actual = park.dinosaurs.length;
-    assert.strictEqual(actual, 3)
+    assert.strictEqual(actual, 3);
   });
 
   it('should be able to add a dinosaur to its collection', function(){
-    park.addDinosaur(dinosaur4)
-    const actual = park.dinosaurs.length
-    assert.strictEqual(actual, 4)
+    park.addDinosaur(dinosaur4);
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual, 4);
 
   });
 
-  xit('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    park.removeDinosaurByName(dinosaur2);
+    const actual = park.dinosaurs.length
+    assert.strictEqual(actual, 2)
+
+  
+  });
 
   xit('should be able to find the dinosaur that attracts the most visitors');
 
