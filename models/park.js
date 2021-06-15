@@ -34,4 +34,13 @@ Park.prototype.findBySpecies = function(species){
     }
     return foundSpecies  
 }
+
+Park.prototype.totalVisitorsPerDay = function() {
+    let averageDailyVisitors = 0;
+
+    for (const dinosaur of this.dinosaurs) {
+        averageDailyVisitors += dinosaur.guestsAttractedPerDay;
+    }
+    return averageDailyVisitors;
+}
 module.exports = Park
