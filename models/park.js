@@ -23,4 +23,15 @@ Park.prototype.mostVisitedDinosaur = function(){
     }
     return attractiveDinosaur
 }
+
+Park.prototype.findBySpecies = function(species){
+    const foundSpecies = []
+
+    for (const dinosaur of this.dinosaurs) {
+        if (dinosaur.species === species) {
+            foundSpecies.push(dinosaur);
+        }
+    }
+    return foundSpecies  
+}
 module.exports = Park
