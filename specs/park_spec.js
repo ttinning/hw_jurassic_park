@@ -11,6 +11,7 @@ describe('Park', function() {
     dinosaur1 = new Dinosaur('Achelousaurus', 'Herbivores', 30)
     dinosaur2 = new Dinosaur('Acrocanthosaurus', 'Carnivornes', 50)
     dinosaur3 = new Dinosaur('Avimimus', 'Omnivores', 40)
+    dinosaur4 = new Dinosaur('Pentaceratops', 'Herbivores', 70)
     dinosaurs = [dinosaur1, dinosaur2, dinosaur3]
     park = new Park("Jurassic Park", 15, dinosaurs)
   })
@@ -27,10 +28,15 @@ describe('Park', function() {
 
   it('should have a collection of dinosaurs', function(){
     const actual = park.dinosaurs.length;
-    assert.deepStrictEqual(actual, 3)
+    assert.strictEqual(actual, 3)
   });
 
-  xit('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    park.addDinosaur(dinosaur4)
+    const actual = park.dinosaurs.length
+    assert.strictEqual(actual, 4)
+
+  });
 
   xit('should be able to remove a dinosaur from its collection');
 
