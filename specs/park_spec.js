@@ -2,30 +2,40 @@ const assert = require('assert');
 const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
-describe('Park', function() {
-
+describe('Park', function() { 
+  let dinosaur1;
+  let dinosaur2;
+  let dinosaur3;
+  let park;
   beforeEach(function () {
-
+    dinosaur1 = new Dinosaur('Achelousaurus', 'Herbivores', 30)
+    dinosaur2 = new Dinosaur('Acrocanthosaurus', 'Carnivornes', 50)
+    dinosaur3 = new Dinosaur('Avimimus', 'Omnivores', 40)
+    dinosaurs = [dinosaur1, dinosaur2, dinosaur3]
+    park = new Park("Jurassic Park", 15, dinosaurs)
   })
 
-  it('should have a name');
+  it('should have a name', function(){
+    const actual = park.name;
+  assert.strictEqual(actual, 'Jurassic Park')
+  });
 
-  it('should have a ticket price');
+  xit('should have a ticket price');
 
-  it('should have a collection of dinosaurs');
+  xit('should have a collection of dinosaurs');
 
-  it('should be able to add a dinosaur to its collection');
+  xit('should be able to add a dinosaur to its collection');
 
-  it('should be able to remove a dinosaur from its collection');
+  xit('should be able to remove a dinosaur from its collection');
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  xit('should be able to find the dinosaur that attracts the most visitors');
 
-  it('should be able to find all dinosaurs of a particular species');
+  xit('should be able to find all dinosaurs of a particular species');
 
-  it('should be able to calculate the total number of visitors per day');
+  xit('should be able to calculate the total number of visitors per day');
 
-  it('should be able to calculate the total number of visitors per year');
+  xit('should be able to calculate the total number of visitors per year');
 
-  it('should be able to calculate total revenue for one year');
+  xit('should be able to calculate total revenue for one year');
 
 });
