@@ -1,7 +1,7 @@
-const Park = function(name, ticketPrice, dinosaurs) {
+const Park = function(name, ticketPrice) {
     this.name = name;
     this.ticketPrice = ticketPrice;
-    this.dinosaurs = dinosaurs;
+    this.dinosaurs = [];
 };
 
 Park.prototype.addDinosaur = function(dinosaur){
@@ -13,4 +13,14 @@ Park.prototype.removeDinosaurByName = function(dinosaur){
     this.dinosaurs.splice(indexOfDinosaur, 1)
 }
 
+Park.prototype.mostVisitedDinosaur = function(){
+    let attractiveDinosaur = this.dinosaurs[0];
+
+    for (const dinosaur of this.dinosaurs){
+        if (dinosaur.guestsAttractedPerDay > attractiveDinosaur.guestsAttractedPerDay) {
+            attractiveDinosaur = dinosaur
+        }
+    }
+    return attractiveDinosaur
+}
 module.exports = Park
