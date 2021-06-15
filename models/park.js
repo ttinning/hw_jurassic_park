@@ -43,4 +43,9 @@ Park.prototype.totalVisitorsPerDay = function() {
     }
     return averageDailyVisitors;
 }
+
+Park.prototype.totalVisitorsPerYear = function() {
+    return this.totalVisitorsPerDay() * 365
+}
+
 module.exports = Park
